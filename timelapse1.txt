@@ -1,0 +1,9 @@
+
+to take pictures
+
+libcamera-still -t 30000 --timelapse 5000 -o image%04d.jpg
+
+
+use to make video
+ffmpeg -r 10 -f image2 -pattern_type glob -i 'image*.jpg' -s 1280x720 -vcodec libx264 timelapse.mp4
+
